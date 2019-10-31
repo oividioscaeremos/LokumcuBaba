@@ -45,7 +45,7 @@ public class HomeContoller {
             return "index";
         }
 
-        if(dao.getIfDuplicate(applicant.getTckn()) != -1){
+        if(dao.getIfDuplicate(applicant.getTckn()) != null){
             result.addError(new FieldError("applicant", "tckn", "Daha Önce Aynı Kimlik Numarasıyla Başvuru Yapılmış."));
             return "index";
         }
