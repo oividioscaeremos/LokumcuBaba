@@ -45,6 +45,10 @@ public class HomeContoller {
             return "index";
         }
 
+        if(dao.getIfDuplicate(applicant.getTckn()) != -1){
+            result.addError(new FieldError("applicant", "tckn", "Daha Önce Aynı Kimlik Numarasıyla Başvuru Yapılmış."));
+            return "index";
+        }
         dao.save(applicant);
         return "success";
     }

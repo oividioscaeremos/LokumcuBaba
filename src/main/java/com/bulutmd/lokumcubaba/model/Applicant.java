@@ -18,7 +18,7 @@ public class Applicant {
     private String adSoyad;
 
     @NotBlank(message = "Kimlik Numaranız 11 Haneli Olarak Girilmelidir.")
-    @Column(name = "tckn")
+    @Column(name = "tckn", unique = true)
     private String tckn;
 
     @NotBlank(message = "Adres Bölümü Boş Bırakılamaz.")
